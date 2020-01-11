@@ -9,14 +9,40 @@ using EditorGUITable;
 
 public class CustomTerrainEditor : Editor
 {
+    //propeties -------------------------
+    SerializedProperty randomHeightRange;
+
+    //fold outs ------------
+    bool showRandom = false;
+
     private void OnEnable()
     {
-        
+        // "randomHeightRange" from CustomTerrain class
+        randomHeightRange = serializedObject.FindProperty("randomHeightRange"); 
     }
 
     public override void OnInspectorGUI()
     {
+        serializedObject.Update();
 
+        CustomTerrain terrain = (CustomTerrain)target;
+
+        //FOLDOUT
+        showRandom = EditorGUILayout.Foldout(showRandom, "Random"); // triangle foldout image
+        if (showRandom)
+        {
+            // this code opens the folder (foldout)
+            EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
+            GUILayout.Label("Set Heights Between Random Values", EditorStyles.boldLabel);
+            EditorGUILayout.PropertyField(randomHeightRange);
+            if (GUILayout.Button("Random Heights"))
+            {
+                terrain.RandomTerrain();
+            }
+        }
+        //END FOLDOUT
+
+        serializedObject.ApplyModifiedProperties();
     }
 
     // Start is called before the first frame update
