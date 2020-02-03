@@ -152,6 +152,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0757eb40bee29234bbfb029da886908e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  randomHeightRange: {x: 0, y: 1}
+  terrain: {fileID: 249001984}
+  terrainData: {fileID: 15600000, guid: 3d501b8f7c5594446b5be8415e1f6f47, type: 2}
 --- !u!154 &249001983
 TerrainCollider:
   m_ObjectHideFlags: 0
@@ -285,8 +288,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 442220368}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: -0.06302919, y: 0.92150354, z: -0.3440289, w: -0.16882758}
+  m_LocalPosition: {x: 842.52563, y: 651.04535, z: 1528.0869}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

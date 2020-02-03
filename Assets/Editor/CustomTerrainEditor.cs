@@ -42,6 +42,12 @@ public class CustomTerrainEditor : Editor
         }
         //END FOLDOUT
 
+        // flatten the terrain out (starting values/level)
+        if (GUILayout.Button("Reset Terrain"))
+        {
+            terrain.ResetTerrain();
+        }
+
         serializedObject.ApplyModifiedProperties();
     }
 
